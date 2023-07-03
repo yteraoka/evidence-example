@@ -7,7 +7,7 @@
 	// Create a tree structure from the array of paths
 	let fileTree = {
 		label: 'Home',
-		href: '/',
+		href: '/evidence-example/',
 		children: {},
 		isTemplated: false
 	};
