@@ -7,14 +7,14 @@
 	// Create a tree structure from the array of paths
 	let fileTree = {
 		label: 'Home',
-		href: '/evidence-example/',
+		href: '/',
 		children: {},
 		isTemplated: false
 	};
 	pagePaths.forEach(function (path) {
 		path.split('/').reduce(function (r, e) {
 			if (e === '+page.md') {
-				let href = path.includes('[') ? undefined : encodeURI('/evidence-example/' + path.replace('/+page.md', ''));
+				let href = path.includes('[') ? undefined : encodeURI('/' + path.replace('/+page.md', ''));
 				return (r['href'] = href);
 			} else {
 				let label = e.includes('[') ? undefined : e.replace(/_/g, ' ').replace(/-/g, ' ');
@@ -81,10 +81,6 @@
 {/if}
 
 <div data-sveltekit-preload-data={prefetchStrategy} class="grid">
-	<div class="header-bar">
-		<Header {fileTree} bind:open />
-	</div>
-	<Sidebar bind:open {fileTree} />
 	{#if !$navigating}
 		<main in:blur|local id="evidence-content">
 			<div class="content" class:settings-content={$page.url.pathname.startsWith('/settings')}>
