@@ -36,6 +36,10 @@ jobs:
           node-version-file: .tool-versions
       - name: Install node_modules
         run: npm ci
+      - name: Set build time
+        run: |
+          echo '"date","time","zone"' > sources/build_time.csv
+          date '+"%Y-%m-%d","%H:%M:%S","%z"' >> sources/build_time.csv
       - name: Build evidence.dev pages
         run: npm run build
       - name: Upload artifact
