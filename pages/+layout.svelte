@@ -14,7 +14,7 @@
 	pagePaths.forEach(function (path) {
 		path.split('/').reduce(function (r, e) {
 			if (e === '+page.md') {
-				let href = path.includes('[') ? undefined : encodeURI('/evidence-example' + path.replace('/+page.md', ''));
+				let href = path.includes('[') ? undefined : encodeURI('/evidence-example/' + path.replace('/+page.md', ''));
 				return (r['href'] = href);
 			} else {
 				let label = e.includes('[') ? undefined : e.replace(/_/g, ' ').replace(/-/g, ' ');
