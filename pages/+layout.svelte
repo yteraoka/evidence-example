@@ -130,7 +130,7 @@
 	}
 
 	article {
-		max-width: 70ch;
+		max-width: 90ch;
 		min-width: 0;
 		width: 100%;
 		grid-area: article;
