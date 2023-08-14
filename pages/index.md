@@ -8,6 +8,9 @@ select * from read_csv_auto('sources/build_time.csv', HEADER=TRUE)
 
 Build At: <Value data={build_time} column=date /> <Value data={build_time} column=time /> <Value data={build_time} column=zone />
 
+テキストメッセージ
+
+test message
 
 ```sql aaa
 select date, name, count from read_csv_auto('sources/test.csv', HEADER=TRUE)
