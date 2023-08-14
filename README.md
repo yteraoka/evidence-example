@@ -38,3 +38,15 @@ See [the CLI docs](https://docs.evidence.dev/cli/) for more command information.
 - [Github](https://github.com/evidence-dev/evidence)
 - [Slack Community](https://join.slack.com/t/evidencedev/shared_invite/zt-uda6wp6a-hP6Qyz0LUOddwpXW5qG03Q)
 - [Evidence Home Page](https://www.evidence.dev)
+
+# e-Stat
+
+https://www.e-stat.go.jp/
+
+## 学校保健統計調査 平成２７年度以降 都道府県表
+
+```
+curl -sLo tmp.csv \
+  "http://api.e-stat.go.jp/rest/3.0/app/getSimpleStatsData?appId=${appId}&lang=J&statsDataId=0003146482&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0"
+awk '/^"tab_code"/,0' tmp.csv > sources/height-and-weight.csv
+```
